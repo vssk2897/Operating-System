@@ -1,11 +1,7 @@
-// haven't checked the Logic of your program, but the principle should work:
-
 #include <pthread.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include </usr/include/semaphore.h>
-
-// for sleep
 #include <unistd.h>
 
 #define BUFF_SIZE   5           /* total number of slots */
@@ -15,9 +11,9 @@
 
 typedef struct
 {
-    int buf[BUFF_SIZE];   /* shared var */
-    int in;               /* buf[in%BUFF_SIZE] is the first empty slot */
-    int out;              /* buf[out%BUFF_SIZE] is the first full slot */
+    int buf[BUFF_SIZE];   
+    int in;               
+    int out;              
     sem_t full;           /* keep track of the number of full spots */
     sem_t empty;          /* keep track of the number of empty spots */
 
